@@ -1,0 +1,31 @@
+
+<p *ngIf="!resultadoFinal" class="text-lg mb-2">{{ mensaje }}</p>
+<p *ngIf="resultadoFinal" class="text-xl font-bold mb-2 animate-pulse">
+  {{ resultadoFinal }}
+</p>
+<!--<p class="text-sm text-gray-600 mb-3">
+  🌸 Pétalos restantes: {{ petalos.length }} / {{ totalPetalos }}
+</p>-->
+<div class="flex flex-col items-center text-center mt-8 font-sans select-none">
+<div class="relative w-[300px] h-[300px] flex items-center justify-center">
+    <img 
+    src="./flor/tallo.png"
+    class="absolute inset-0 w-full h-full"
+    alt="">
+    <img
+    src="./flor/semillas.png"
+    class="absolute z-10 w-[300px] h-[300px] origin-center"
+    style="top: 65%; left: 50%; transform: translate(-50%, -50%);"
+    alt="semilla de la flor">
+    <img
+     *ngFor="let p of petalos"
+    src="./flor/petalo.png "
+    class="absolute w-[120px] h-[120px] origin-botom"
+    [style.transform]="'rotate(' + p.rotation + 'deg) translateY(-60px)'"
+    />
+<!--</div>-->
+</div>
+<div>
+    <button (click)="arrancapetalo()" class="bg-[#fa8072] m-5 px-2 text-white rounded-lg hover:bg-red-200 target:shadow-lg disabled:cursor-not-allowed transition-colors">arrancar petalo</button>
+    <button (click)="reiniciarjuego()" class="bg-[#fa8072] m-5 px-2 text-white rounded-lg hover:bg-red-200 target:shadow-lg">volver a jugar</button>
+</div>

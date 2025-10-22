@@ -1,0 +1,13 @@
+<!--componente de los libros 1
+grind sirve para la cuadricula,grid cols 1 significa una columna, md
+ gris cols significa que seran dedl mismo tamaño, gap es el espacio entre las imagenes-->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4 p-4 bg-[url(https://tse2.mm.bing.net/th/id/OIP.c78bL6I9CGKVP9a1ZGwq1gHaHc?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3)] h-full w-full border-2 border-red-300 text-white">
+    @for (cover of covers(); track cover){
+    <book-item 
+    [coverUrl]="cover.coverUrl"
+    [titulo]="cover.title"
+    [autor]="cover.author"
+    [previeww]="cover.preview"
+    />
+}
+</div>

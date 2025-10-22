@@ -1,0 +1,9 @@
+<div class="">
+    @for(videoo of videito();track videoo){
+        <video-item 
+        [videoUrl]="videoo.image"
+        [titulovideo]="videoo.title"
+        [descripcion]="videoo.description"
+        ></video-item>
+    }
+</div>

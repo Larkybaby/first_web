@@ -1,0 +1,7 @@
+<div class="grid grid-cols-1 md:grid-cols-4 gap-10 border rounded-lg p-4">
+    @for(gifitis of  gifiti(); track gifitis){
+     <gif-item
+     [gifurl]="gifitis.url"
+     />
+    }
+</div>

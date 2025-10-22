@@ -1,0 +1,14 @@
+<div>
+   <!--h es altura, w es ancho, rounded lg borde redondeado,object cover elemento redimensionable
+   -->
+   <a [href]="previeww()">
+    <img 
+   class="h-1/2 w-1/2 rounded-lg object-cover mx-auto"
+   [src]="coverUrl()"
+   alt=""
+   /></a>
+   <h3>Titulo:</h3>
+   <h3 class=" font-semibold">{{titulo()}}</h3>
+    <h4>Autor:</h4>
+   <h4 class="font-semibold">{{autor()}}</h4>
+</div>

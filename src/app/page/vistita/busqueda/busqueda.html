@@ -1,0 +1,18 @@
+<div class="text center m-4"><!--m4 margen-->
+<input  type="text" placeholder="Busca tu libro favorito" 
+class="mt3 border border-black-100 rounded w-1/2 bg-stone-50 text-center text-pink-400"
+(keyup.enter)="buscar(txtSearch.value)"
+#txtSearch
+/>
+<!--Que es txtsearch?-->
+<!--mt 3 es para margen superior, border para borde,   -->
+</div>
+<!--parte que mostrara los resultados-->
+<section>
+    <bookscomponent 
+    [covers]="libritos()"
+    [autore]="libritos()"
+    [titule]="libritos()"
+    [prewie]="libritos()"
+     />
+</section>

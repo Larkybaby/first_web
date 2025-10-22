@@ -1,0 +1,209 @@
+<header class="sticky top-0 bg-pink-400 shadow z-40 flex flex-col items-center justify-center py-4">
+<h1 class="text-white font-tangerine">THE LOVE PAGE</h1>
+<div>
+<a class="bg-[#fa8072] mg-5 px-2 text-white rounded-lg hover:bg-red-200 target:shadow-lg" href="#libros">libros</a>
+&nbsp;
+<a class="bg-[#fa8072] mg-5 px-2 text-white rounded-lg hover:bg-red-200" href="#canciones">canciones</a>
+&nbsp;
+<a class="bg-[#fa8072] mg-5 px-2 text-white rounded-lg hover:bg-red-200" href="#frases">frases</a>
+&nbsp;
+<a class="bg-[#fa8072] mg-5 px-2 text-white rounded-lg hover:bg-red-200" href="#giphs">gifs</a>
+&nbsp;
+<a class="bg-[#fa8072] mg-5 px-2 text-white rounded-lg hover:bg-red-200" href="#test">tests</a>
+&nbsp;
+<a class="bg-[#fa8072] mg-5 px-2 text-white rounded-lg hover:bg-red-200" href="#juegos">juegos</a>
+&nbsp;
+<a class="bg-[#fa8072] mg-5 px-2 text-white rounded-lg hover:bg-red-200"  href="#inicio">volver al inicio</a>
+</div>
+</header>
+
+
+
+<div id="inicio" class="bg-[#ffe4e6] dark:bg-rose-900">
+<div class="bg-[url('https://i.pinimg.com/originals/6b/c7/9d/6bc79d5d15d0153954291ff277ff6d10.gif')] h-full w-full bg-cover bg-center">
+<br><br><br>
+<div style="text-align: center;">
+<h3 class="text-white">pagina principal
+<br><br>
+bienvenid@ si estas aqui es porque tienes a alguien especial!
+</h3>
+<br>
+<h3 class="mx-auto flex gap-x-4 max-w-6xl items-center rounded-xl bg-pink-400 text-white p-6 shadow-lg outline outline-black/5 dark:bg-gray-400 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10 dark:text-pink-400">Segun la enciclopedia el amor es:<br>
+ El vínculo de afecto que nace de la valoración del otro e inspira el deseo de su bien. Puede verse como un valor o como una propiedad de las relaciones humanas.
+<br>
+pero al final de cuentas cada persona le da su propio significado<br>
+</h3>
+<h3 class="text-white">Porfavor ingresa tu inicial y el de tu persona especial <br> o sus nombres </h3>
+<input type="text" class="bg-stone-50 text-rose-400 border rounded-lg text-center" [(ngModel)]='newinicial1' [disabled]="cargando()"  placeholder="tu inicial">&nbsp;
+<input type="text" class="bg-stone-50 text-rose-400 border rounded-lg text-center" [(ngModel)]='newinicial2' [disabled]="cargando()" placeholder="su inicial">
+<br><BR>
+<button (click)="juntainiciales();" class="bg-red-500 hover:bg-pink-400 hover:text-red-500 border rounded-lg text-stone-50">PRESIONAME PARA UNIRLOS</button>
+<BR>
+<div class="flex items-center justify-center py-8">    
+    <div class="bg-rose-300 border rounded-lg w-sm h-full items-center dark:bg-rose-900 text-violet-500">
+    <div *ngIf="cargando()">
+        <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-b-pink-500 mx-auto"></div>
+       <p>cargando <br> por favor espere....</p>
+    </div>
+
+<!--cambia en ng-container por un div-->
+<!-- -->
+<div *ngIf="!cargando() && inicial().length > 0"><!--si no cargando y porcentajeentero no es cero aparece-->
+    <div *ngFor="let it of inicial()">
+    <H1 >{{it.inicial1}} + {{it.inicial2}}</H1><!--para que es el span?-->
+    <h2>{{porcentajeEntero()}}%</h2>
+    <h2>{{respuesta()}}</h2>
+    <!--<div *ngFor="let item of inicial()">
+    <H1><span>{{item.inicial1}}+{{item.inicial2}}</span></H1>
+    <h2>{{porcentajeEntero}}%</h2>-->
+</div>
+</div>
+</div>
+</div>
+
+<br>
+<h4 class="text-white">lo mas bonito de la vida:</h4><h4 id="amor">
+    <div class="bg-purple-100 text-pink-400">{{amor()}}</div></h4>
+<br>
+<button class="bg-violet-100 mg-5 px-2 hover:bg-cyan-200 text-stone-950" (click)="nosotros()">amor?</button>&nbsp;
+<button class="bg-purple-200 mg-5 px-2 hover:bg-cyan-200 text-stone-950" (click)="tuyyo()">nosotros somos?</button>
+<h4 class="text-white">yo + tu vida?   <br>
+    {{amore()}}</h4> 
+</div>
+<div class="text-center  text-amber-200">
+<h4>Antes de continuar porfavor selecciona la cancion que quieras de fondo</h4>
+    <h3>ahora escuchando:&nbsp;{{cambiocancion()}}</h3>
+    <div class="flex justify-center mt-4 ">
+    <ng-container *ngIf="cancion() as currentSong"><!--if condicion cierta o falsa, mientras cancion valida se reproduce audio-->
+    <!--controls class="w-sm rounded-lg bg-red-200 border border-red-300 focus:outline-none focus:ring-2 focus:ring-blue-500"-->
+        <audio 
+        autoplay loop
+        [src]="currentSong">
+    </audio>
+    </ng-container>
+    </div>
+    <h3>Presiona la cancion de tu agrado para reproducir</h3>
+    <button (click)="cancion1()" class="bg-red-950 hover:bg-red-200 active:bg-red-200">Lo que siento de Cuco</button>
+    &nbsp;
+    <button (click)="cancion2()" class="bg-red-950 hover:bg-red-200 active:bg-red-200">Only de LeeHi</button>
+    &nbsp;
+    <button (click)="cancion3()" class="bg-red-950 hover:bg-red-200 active:bg-red-200">her de JVKE</button>
+    &nbsp;
+    <button (click)="cancion4()" class="bg-red-950 hover:bg-red-200 active:bg-red-200">I Hear a Symphony de Cody Fry</button>
+</div>
+<hr>
+</div>
+
+
+
+<section id="libros" class=" text-center items-center bg-[url(https://i.pinimg.com/originals/54/b0/ef/54b0efc42e2b6989bd2e3cfc5f625311.gif)] h-full w-full dark:bg-amber-900">
+<br><br><br><br>
+<h3 class="text-white">libros</h3>
+<div class="bg-white w-6xl flex flex-col items-center justify-center rounded-lg mx-auto shadow-lg text-violet-600">
+<br>
+    <h4>Bienvenido a nuestra libreria privada de corazones</h4>
+<p class="text-pink-500 flex justify-center space-x-2">A continuacion veras los primeros 16 libros al buscar "los mejores libros de romance"</p>
+<div class="w-full flex justify-center mt-4 ">
+<div class="flex items-center space-x-2">
+<p>Si alguno te llama la atencion da click en el para ver su preview </p>
+<img src="click-imagen.gif" class="w-8 h-8 object-cover rounded-lg" ><br>
+</div>
+</div>
+<a  href="#buscador"><p>si no te interesan los libros a continuacion pasa directamente al buscador<br>dando click aqui</p></a>
+</div>
+<br>
+<div>
+<libros></libros>
+</div>
+<div id="buscador">
+<br><br><br><br>
+<div class="bg-white text-rose-500">
+<p>A continuacion tendras una barra de busqueda<br> puedes buscar un libro de tu agrado
+    <br>recomendamos buscar por nombre y autor si es posible,o busca una categoria especifica</p>
+</div>
+    <busqueda></busqueda>
+</div>
+<br>
+</section>
+
+
+
+<section id="canciones" class=" text-pink-200 text-center bg-[url(https://th.bing.com/th/id/R.53cd7751fba7083d2474fe1c9e91828d?rik=bk1p5EGRBJVyfw&pid=ImgRaw&r=0)] h-full">
+<hr>
+<br><br><br><br>
+<h3>canciones</h3>
+<h4>Bienvenido a seccion canciones de amor de la pagina</h4>
+
+<p>a continuacion se mostraran las canciones de amor </p>
+<div>
+    <canciones></canciones>
+</div>
+<br>
+</section>
+
+
+
+
+<section id="frases" class="text-center text-red-900  bg-[url(https://thumbs.dreamstime.com/b/red-hearts-alphabet-letter-set-creative-love-vector-illustration-63382333.jpg)]">
+<hr>
+<br><br><br>
+<div class="bg-rose-300 border rounded-lg w-5xl h-full items-center dark:bg-rose-900 dark:text-white mx-auto p-4">
+<br>
+    <h3>frases</h3>
+
+<h4>Bienvenido a recomendacion de frases de amor</h4>
+<p class="">aqui te muestro las mejores 8 frases de amor en mi opinion</p>
+</div>
+<br>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4  rounded-lg">
+<img class="rounded-lg" src="frases/frase-1.jpg">
+<img class="rounded-lg" src="frases/frase-2.jpeg">
+<img class="rounded-lg" src="frases/frase-3.jpg">
+<img class="rounded-lg" src="frases/frase-4.jpeg">
+<img class="rounded-lg" src="frases/frase-5.jpeg">
+<img class="rounded-lg" src="frases/frase-6.jpeg">
+<img class="rounded-lg" src="frases/frase-7.jpg">
+<img class="rounded-lg" src="frases/frase-8.jpg">
+</div>
+<br>
+</section>
+
+
+
+<section id="giphs" class="text-center text-pink-950">
+    <hr>
+    <br><br><br><br><br>
+    <h3>Gifs</h3>
+    <h4>Los primeros 16 gifs mas relevantes</h4>
+    <div class="bg-rose-900">
+        <gifs-amor></gifs-amor>
+    </div>
+
+</section>
+<section id="test" class="text-center text-violet-900 font-serif bg-[url(https://img.freepik.com/free-photo/watercolor-paper-texture_1194-6496.jpg)]">
+ <hr>
+<br><br><br><br><br>
+<h1>TEST</h1>
+<h2>Bienvenido al area de test</h2>
+<ul>
+    <li><a href="#apego">test de tipo de apego</a></li>
+</ul>
+<h2>Bienvenido al test de tipo de apego</h2>
+</section>
+
+
+
+
+<section id="juegos" class="bg-[url(https://t3.ftcdn.net/jpg/03/23/88/08/360_F_323880864_TPsH5ropjEBo1ViILJmcFHJqsBzorxUB.jpg)] text-center text-pink-600">
+    <hr>
+    <br><br><br><br><br>
+<h1>JUEGOS</h1>
+<div class="bg-rose-200">
+    <h2>Me ama o No me ama</h2>
+    <juego-flor></juego-flor>
+</div>
+</section>
+<h5 class="hover:bg-red-500 text-white">si pudiste ver esto, recuerda vivir con amor</h5>
+</div>
+
+   
