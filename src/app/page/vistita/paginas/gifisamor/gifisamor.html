@@ -1,0 +1,14 @@
+<app-header></app-header>
+<section id="giphs" class="text-center text-pink-950">
+    <br>
+    <h3>Gifs</h3>
+    <h4>Los primeros 16 gifs mas relevantes</h4>
+    <div class="bg-rose-900">
+        <div>
+        <gif-show
+        [gifiti]="gifiservice.amorgifs()"
+        ></gif-show>
+</div>
+    </div>
+
+</section>

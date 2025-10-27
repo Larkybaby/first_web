@@ -1,0 +1,32 @@
+<app-header></app-header>
+<section id="libros" class=" text-center items-center bg-[url(https://i.pinimg.com/originals/54/b0/ef/54b0efc42e2b6989bd2e3cfc5f625311.gif)] h-full w-full dark:bg-amber-900">
+<br>
+<h3 class="text-white">libros</h3>
+<div class="bg-white max-w-6xl w-full flex flex-col items-center justify-center rounded-lg mx-auto shadow-lg text-violet-600">
+<br>
+    <h4>Bienvenido a nuestra libreria privada de corazones</h4>
+<p class="text-pink-500 flex justify-center space-x-2">A continuacion veras los primeros libros al buscar "los mejores libros de romance"</p>
+<div class="w-full flex justify-center mt-4 ">
+<div class="flex items-center space-x-2">
+<p>Si alguno te llama la atencion da click en el para ver su preview </p>
+<img src="click-imagen.gif" class="w-8 h-8 object-cover rounded-lg" ><br>
+</div>
+</div>
+<a  href="/libros#buscador"><p>si no te interesan los libros a continuacion pasa directamente al buscador<br>dando click aqui</p></a>
+</div>
+<br>
+<div class="text-center">
+    <bookscomponent 
+    [covers]="bookservice.romancebooks()"
+    [autore]="bookservice.romancebooks()"
+    [titule]="bookservice.romancebooks()"
+    [prewie]="bookservice.romancebooks()"
+     />
+</div>
+<div id="buscador">
+<br><br><br><br>
+<div class="bg-white text-rose-500">
+    <busqueda></busqueda>
+</div>
+</div>
+</section>

@@ -1,7 +1,7 @@
 import { Component,inject, signal  } from '@angular/core';
 import { services} from '@services/services';
 import { book_part } from '@interfaces/interface_books'; 
-import { BooksComponent } from '../../../Component/books_component/books.component'; 
+import { BooksComponent } from '../../../../../Component/books_component/books.component'; 
 @Component({
     selector: 'busqueda',
     standalone: true,

@@ -9,6 +9,7 @@
       "@environments/*":["src/environments/*"],//ruta recortada 
       "@interfaces/*":["src/app/interfaces/*"],
       "@services/*":["src/app/services/*"],
+      "@header/*":[ "src/app/Component/share/header/*"]
     },
     "strict": true,
     "noImplicitOverride": true,

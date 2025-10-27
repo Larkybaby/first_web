@@ -1,5 +1,6 @@
 import { Component} from '@angular/core';
-import { CommonModule } from '@angular/common'
+import { CommonModule } from '@angular/common';
+import { NgClass } from '@angular/common';
 interface petalo{
 id: number; //para que cada uno se distinga
 rotation: number; //cuanto rota cada petalo

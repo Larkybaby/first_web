@@ -1,11 +1,12 @@
 import { Component, inject } from '@angular/core';
 import { gifcomponent } from 'src/app/Component/gifs.components/gif.imagen';
 import { services } from '@services/services';
+import {Header } from '@header/header';
 @Component ({
     selector: 'gifs-amor',
     standalone: true,
-    imports: [ gifcomponent ],
+    imports: [gifcomponent, Header],
     templateUrl: './gifisamor.html',
-})export class Gifisamor{
+})export default class Gifisamor{
     gifiservice = inject(services);
 }

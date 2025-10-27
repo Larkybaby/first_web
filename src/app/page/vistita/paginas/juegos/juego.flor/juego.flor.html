@@ -1,5 +1,11 @@
 
-<p *ngIf="!resultadoFinal" class="text-lg mb-2">{{ mensaje }}</p>
+<section class="text-center text-pink-600">
+    <br>
+<h1>JUEGOS</h1>
+<div class="container bg-stone-50   shadow-black border rounded-lg max-w-2px w-full">
+  <!--class="bg-rose-200"-->
+    <h2>Me ama o No me ama</h2>
+    <p *ngIf="!resultadoFinal" class="text-lg mb-2">{{ mensaje }}</p>
 <p *ngIf="resultadoFinal" class="text-xl font-bold mb-2 animate-pulse">
   {{ resultadoFinal }}
 </p>
@@ -29,3 +35,6 @@
     <button (click)="arrancapetalo()" class="bg-[#fa8072] m-5 px-2 text-white rounded-lg hover:bg-red-200 target:shadow-lg disabled:cursor-not-allowed transition-colors">arrancar petalo</button>
     <button (click)="reiniciarjuego()" class="bg-[#fa8072] m-5 px-2 text-white rounded-lg hover:bg-red-200 target:shadow-lg">volver a jugar</button>
 </div>
+</div>
+</div>
+</section>

@@ -1,28 +1,22 @@
 import { Component,signal } from '@angular/core';
-import { libros } from './libros/libros';
-import { BusquedaComponent} from './busqueda/busqueda'
-import { CancionesComponent } from './canciones/canciones'
-import { NgIf,} from '@angular/common';
 import { FormsModule } from "@angular/forms";
 import { CommonModule } from "@angular/common";
-import { Gifisamor } from './gifisamor/gifisamor';
-import { FlorComponent } from './juegos/juego.flor/juego.flor';
-interface Iniciales{
+import { Header } from '@header/header';
+
+ interface Iniciales{
     inicial1:string;
     inicial2:string;
 }
 @Component({
     standalone: true,
-    imports: [libros, BusquedaComponent, CancionesComponent,
-        FormsModule,CommonModule, Gifisamor,FlorComponent,
-
-
-    ],//NgClass,
+    imports: [Header,
+    FormsModule, CommonModule,
+],//NgClass,
     templateUrl: './vistita.html',
 },)
 export class Vistita{
     amor= signal('amor');
-    yo= signal('yo');
+    yo= signal('el');
     vida= signal('amor de tu vida');
     ahoraescuchando= signal('Lo que siento-CUCO');
     cancion= signal('Lo que siento.mp3');
@@ -65,7 +59,7 @@ export class Vistita{
         this.amor.set('amor');
     }
     amore(){
-        return `${this.yo()} soy ${this.vida()} `;
+        return `${this.yo()} ${this.vida()} `;
     }
     //iniciales
     inicial= signal<Iniciales[]>([]);
