@@ -1,20 +1,22 @@
-<section id="apego" class="container bg-white">
-<div>
-<div *ngIf="!terminamos() && indice()==0">
-    <h2>Bienvenido al test de tipo de apego</h2>
-    <div class="flex items-center justify-center">
-    <img
-    class="w-50 h-50" 
-    [src]="imagen()">
+<section id="lenguajeamor" class="container bg-white">
+<div *ngIf="indice() == 0">
+    <h2>Bienvenido al test de cual es tu lenguaje de amor</h2>
+    <div class="flex justify-center items-center">
+        <img
+        class="w-50 h-50"
+        [src]="imagen()"
+        >
     </div>
-    <button
-    class="bg-red-300 max-h-10 max-w-50 h-screen hover:bg-amber-200" 
+    <br>
+    <button 
+    class="bg-red-600 text-white hover:bg-red-100 hover:text-black" 
     (click)="iniciar()">Comenzar</button>
+
 </div>
+<div>
 <div *ngIf="!terminamos() && indice()>=1">
-    <p *ngIf="!terminamos()">pregunta {{indice()}} de {{tipodeapegopreguntas.length - 1}}</p>
-    <h2>1 en desacuerdo y 5 por deacuerdo</h2>
-    <h2>{{tipodeapegopreguntas[indice()]}}</h2>
+    <p *ngIf="!terminamos()">pregunta {{indice()}} de {{lenguajedelamorpreguntas.length - 1}}</p>
+    <h2>{{lenguajedelamorpreguntas[indice()]}}</h2>
 <div class="bg-amber-50 border rounded-lg max-w-full h-sm h-full flex flex-col items-center justify-center p-4">
     <h1 class="inline-flex justify-center"
     ><button (click)="suma(1)"
@@ -39,16 +41,13 @@ class="border rounded-lg bg-lime-500 w-16 h-16 m-1"
 </div>
 
 <div *ngIf="terminamos()">
-<h1>tu resultado es:<br>
-</h1>
-<div class="flex justify-center">    <img
-class=" items-center border rounded-lg"
-[src]="imagen()">
-<!--{{tipodeapego()}}-->
-</div>
+<button (click)="resultado()">ver tu tipo de apego</button>
 <br>
-<h1>tu puntaje:
-    <br>{{points()}}</h1>
+<h1>tu resultado es:<br>
+{{lenguajedelamor()}}
+</h1>
+<br>
+<h1>{{points()}}</h1>
 <br>
 <button (click)="reiniciar()" >reintentar</button>
 </div>

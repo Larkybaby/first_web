@@ -1,7 +1,7 @@
 # Practica
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.3.
-
+and this was a solo project to learn the basis of angular and programation in visual code
 ## Development server
 
 To start a local development server, run:
