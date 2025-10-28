@@ -18,8 +18,8 @@ export class Vistita{
     amor= signal('amor');
     yo= signal('el');
     vida= signal('amor de tu vida');
-    ahoraescuchando= signal('Lo que siento-CUCO');
-    cancion= signal('Lo que siento.mp3');
+    ahoraescuchando= signal('Lo que siento-CUCO');//cancion
+    cancion= signal('Lo que siento.mp3');//cancion
     //metodos canciones
     cambiocancion(){
         return`${this.ahoraescuchando()}`
