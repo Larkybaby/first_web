@@ -1,0 +1,16 @@
+<section>
+    <div>
+    <input  type="text" placeholder="Busca tu cancion fav" 
+    class="mt3 border border-black-100 rounded w-1/2 bg-stone-50 text-center text-pink-400"
+    (keyup.enter)="buscar(txtSearch.value)"
+    #txtSearch
+/>
+    </div>
+    <div>
+    <Video-Component
+    [videito]="songs()"
+    [titulovideo]="songs()"
+    [descripcionvideo]="songs()"
+    />
+    </div>
+</section>

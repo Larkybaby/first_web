@@ -1,0 +1,16 @@
+<section class="bg-red-300" >
+    <br>
+    <div>
+<input  type="text" placeholder="Busca mas gifs" 
+class="mt3 border border-black-100 rounded w-1/2 bg-stone-50 text-center text-pink-400"
+(keyup.enter)="buscar(txtSearch.value)"
+#txtSearch
+/>
+<h3>A continuacion hay un area para que puedas buscar los gifs de tu agrado</h3>
+</div>
+<div class="bg-red-500"><!--parte donde se muestran los gifs-->
+    <gif-show
+        [gifiti]="gifis()"
+    ></gif-show>
+</div>
+</section>

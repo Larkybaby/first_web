@@ -118,6 +118,25 @@ this.http
         }
     })
 };
+busquedavideo(query:string): Observable<videosinterface[]>{
+ return this.http
+.get<Videos>(`${ environment.videosurl}/search`,{//cambie videos por search
+    params:{
+        key:environment.googleapikey ,
+        q: query,
+        //chart: 'mostpopular',
+        part: 'snippet',
+        type: 'video',
+        maxResults: '10',
+        videoCategoryId: '10',//categoria 10 es musica
+
+    }
+})
+.pipe(
+        map(({ items}) =>  items),
+        map((data) => datosvideos.datearray(data)),
+    ); 
+};
 //servicio gifis
 load_amor_gifis(){
     this.http
@@ -133,5 +152,20 @@ load_amor_gifis(){
         this.amorgifs.set(gifisprocesados);
         console.log({gifisprocesados});
     })
+};
+busquedagifis(query: string): Observable <gifspage[]>{
+    return this.http
+    .get<Gifs>(`${ environment.giphyurl}/search`,{
+        params: {
+            api_key: environment.api_key,
+            q: query,// gif que se buscara
+            limit: 16,//para numero maximo de resultados
+            
+        },
+    })
+    .pipe(
+        map(({ data }) => data ),
+        map((items) => DataGifs.gifssarray(items)),
+    );      
 };
 };

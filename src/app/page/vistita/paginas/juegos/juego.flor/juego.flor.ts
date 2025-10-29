@@ -26,10 +26,14 @@ y: number; //su posicion en y
     }
 
     florcompleta(){//metodo para poner petalos
-        this.totalPetalos = Math.floor(Math.random() * 6) + 5;//numero aleatorio de petalos
+        const pea = this.totalPetalos;//petalos de ronda anterior
+        let pe = Math.floor(Math.random() * 6) + 5;//petalos de esta nueva ronda
+         while(pe==pea){//si se repite el numero de petalos dos rondas seguidas es para que vuelva a hacer el random
+            pe = Math.floor(Math.random() * 6) + 5;
+        };
+        this.totalPetalos = pe;//numero aleatorio de petalos
         this.resultadoFinal= '';//reinicia el resultado
         this.mensaje = 'Comienza el juego';//primer mensaje a mostrar
-
        /* const radio = 90; //el radio de la distancia desde el centro 
 
         this.petalos = Array.from({ length: this.totalPetalos}, (_, i) => {
@@ -47,7 +51,8 @@ y: number; //su posicion en y
             rotation: (360 / this.totalPetalos) * i, // ya no restes 90
             x: 0, // ya no se usan
             y: 0  // ya no se usan
-  };
+  };  
+
 });
     }
 

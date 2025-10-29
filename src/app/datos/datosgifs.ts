@@ -1,7 +1,7 @@
 import {  gifis } from "@interfaces/gifs.interfaces/interface";
 import { gifspage } from "@interfaces/gifs.interfaces/interfacegifs";
 export class DataGifs{
-    static gifsshow(gifss: gifis): gifspage{
+    static gifshow(gifss: gifis): gifspage{
         return {
             id: gifss.id,
             title: gifss.title,
@@ -9,6 +9,6 @@ export class DataGifs{
         };
     }
     static gifssarray(dato: gifis[]): gifspage[] {
-        return dato.map(gifss => this.gifsshow(gifss));
+        return dato.map(gifss => this.gifshow(gifss));
     }
 }
