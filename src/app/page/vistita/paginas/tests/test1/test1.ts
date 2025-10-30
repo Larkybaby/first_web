@@ -15,15 +15,35 @@ terminamos = signal(false);
 respuestas:number[] = [];//almacena las respuestas individualmente 
 //preguntas
 tipodeapegopreguntas=[
-{  texto:'',tipo:''},
-{texto:'pregunta prueba 1',tipo:'seguro'},
-{texto:'prueba pregunta 2', tipo:'seguro'},
-{texto:'prueba pregunta 3', tipo:'ansioso'},
-{texto:'prueba pregunta 4', tipo:'ansioso'},
-{texto:'prueba pregunta 5',tipo:'desorganizado'},
-{texto:'prueba pregunta 6',tipo:'desorganizado'},
-{texto:'prueba pregunta 7',tipo:'evitativo'},
-{texto:'prueba pregunta 8',tipo:'evitativo'},
+/*{  texto:'',tipo:''},
+{texto:'No sobrepienso tanto y confio en mi pareja',tipo:'seguro'},
+{texto:'suelo preocuparme por los sentimientos de mi pareja de manera sana', tipo:'seguro'},
+{ texto:'Puedo estar bien tanto cuando estoy con mi pareja como cuando estoy sola',tipo:'seguro'},
+{texto:'necesito explicaciones constantemente', tipo:'ansioso'},
+{texto:'sobrepienso mucho si todavia me quieren', tipo:'ansioso'},
+{texto:'Me preocupa que mi pareja deje de quererme aunque no haya señales claras',tipo:'ansioso'},
+{texto:'Mis sentimientos por alguien son muy cambiantes, me puede gustar un dia y al otro no',tipo:'desorganizado'},
+{texto:'soy muy amorosa unod dias y otros muy fria con la misma persona',tipo:'desorganizado'},
+{texto:'A veces quiero mucho a alguien y luego me alejo sin saber por qué',tipo:'desorganizado'},
+{texto:'Suelo huir de los problemas',tipo:'evitativo'},
+{texto:'Me aburro rapido en relaciones',tipo:'evitativo'},
+{ texto:'Prefiero resolver mis cosas sola antes que hablar de mis sentimientos',tipo:'evitativo'},*/
+{ texto: '', tipo: '' },
+{ texto: 'No sobrepienso tanto y confío en mi pareja.', tipo: 'seguro' },
+{ texto: 'Suelo preocuparme por los sentimientos de mi pareja de manera sana.', tipo: 'seguro' },
+{ texto: 'Puedo estar bien tanto cuando estoy con mi pareja como cuando estoy sola.', tipo: 'seguro' },
+
+{ texto: 'Necesito explicaciones constantemente.', tipo: 'ansioso' },
+{ texto: 'Sobrepienso mucho si todavía me quieren.', tipo: 'ansioso' },
+{ texto: 'Me preocupa que mi pareja deje de quererme aunque no haya señales claras.', tipo: 'ansioso' },
+
+{ texto: 'Mis sentimientos por alguien son muy cambiantes; me puede gustar un día y al otro no.', tipo: 'desorganizado' },
+{ texto: 'Soy muy amorosa unos días y otros muy fría con la misma persona.', tipo: 'desorganizado' },
+{ texto: 'A veces quiero mucho a alguien y luego me alejo sin saber por qué.', tipo: 'desorganizado' },
+
+{ texto: 'Suelo huir de los problemas.', tipo: 'evitativo' },
+{ texto: 'Me aburro rápido en las relaciones.', tipo: 'evitativo' },
+{ texto: 'Prefiero resolver mis cosas sola antes que hablar de mis sentimientos.', tipo: 'evitativo' },
 ];
 imagen = signal('https://tse2.mm.bing.net/th/id/OIP.MDBZ97nSafcoV8sALScUDQHaHW?rs=1&pid=ImgDetMain&o=7&rm=3');
 /*resultado(){
@@ -74,8 +94,17 @@ calcularapego(){
     const promedios: Record<string,number> ={};
     for (const tipo in categorias){
         const arr = categorias[tipo];
-        promedios[tipo] = arr.length ? arr.reduce((a , b) => a + b)/arr.length : 0;
-        
+        promedios[tipo] = arr.length ? arr.reduce((a , b) => a + b)/arr.length : 0;}
+        //
+        const ordenados = Object.entries(promedios).sort((a, b) => b[1] - a[1]);
+        const max = ordenados[0][1];
+        const empatados = ordenados.filter(([_, valor]) => valor === max).map(([tipo]) => tipo);
+        //
+        if(empatados.length > 1){
+            this.tipodeapego.set(`Empate entre:
+                 ${empatados.join(' y ')}`);
+            this.imagen.set('');
+        }else{
         //checa cual es el promedio mas alto
         const tipodominante= Object.entries(promedios).sort((a, b) => b[1]- a[1])[0][0];
         this.tipodeapego.set(tipodominante);
