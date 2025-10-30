@@ -2,7 +2,7 @@
    <!--h es altura, w es ancho, rounded lg borde redondeado,object cover elemento redimensionable
    -->
    <a [href]="previeww()">
-    <img 
+      <img loading="lazy" decoding="async" fetchpriority="low"
    class="h-1/2 w-1/2 rounded-lg object-cover mx-auto"
    [src]="coverUrl()"
    alt=""
