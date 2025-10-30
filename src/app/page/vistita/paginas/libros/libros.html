@@ -9,7 +9,7 @@
 <div class="w-full flex justify-center mt-4 ">
 <div class="flex items-center space-x-2">
 <p>Si alguno te llama la atencion da click en el para ver su preview </p>
-<img src="click-imagen.gif" class="w-8 h-8 object-cover rounded-lg" ><br>
+<img src="click-imagen.gif" class="w-8 h-8 object-cover rounded-lg" loading="lazy" decoding="async" fetchpriority="low"><br>
 </div>
 </div>
 <a  href="/libros#buscador"><p>si no te interesan los libros a continuacion pasa directamente al buscador<br>dando click aqui</p></a>
@@ -20,8 +20,7 @@
     [covers]="bookservice.romancebooks()"
     [autore]="bookservice.romancebooks()"
     [titule]="bookservice.romancebooks()"
-    [prewie]="bookservice.romancebooks()"
-     />
+    [prewie]="bookservice.romancebooks()"  />
 </div>
 <div id="buscador">
 <br><br><br><br>

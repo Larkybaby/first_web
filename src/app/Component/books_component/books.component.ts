@@ -3,10 +3,10 @@ import { Component, input } from "@angular/core";
 import { book_part } from "@interfaces/interface_books"
 import { BookItem } from "./books.item/book-item";
 @Component({
- selector: 'bookscomponent',
- standalone: true,
- imports: [BookItem],
- templateUrl: './books.component.html'
+    selector: 'bookscomponent',
+    standalone: true,
+    imports: [BookItem],
+    templateUrl: './books.component.html'
 
 })
 export class BooksComponent{

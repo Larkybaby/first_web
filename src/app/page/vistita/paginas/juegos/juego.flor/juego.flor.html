@@ -14,16 +14,16 @@
 </p>-->
 <div class="flex flex-col items-center text-center mt-8 font-sans select-none">
 <div class="relative w-[300px] h-[300px] flex items-center justify-center">
-    <img 
+    <img loading="lazy" decoding="async" fetchpriority="low"
     src="./flor/tallo.png"
     class="absolute inset-0 w-full h-full"
     alt="">
-    <img
+    <img loading="lazy" decoding="async" fetchpriority="low"
     src="./flor/semillas.png"
     class="absolute z-10 w-[300px] h-[300px] origin-center"
     style="top: 65%; left: 50%; transform: translate(-50%, -50%);"
     alt="semilla de la flor">
-    <img
+    <img loading="lazy" decoding="async" fetchpriority="low"
      *ngFor="let p of petalos"
     src="./flor/petalo.png "
     class="absolute w-[120px] h-[120px] origin-botom"
