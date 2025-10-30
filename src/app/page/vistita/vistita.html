@@ -4,21 +4,21 @@
 <div class="bg-[url('https://i.pinimg.com/originals/6b/c7/9d/6bc79d5d15d0153954291ff277ff6d10.gif')] h-full w-full bg-cover bg-center">
 <br><br><br>
 <div style="text-align: center;">
-<h3 class="text-white">pagina principal
+<h1 class="text-white">pagina principal
 <br><br>
 bienvenid@ si estas aqui es porque tienes a alguien especial!
-</h3>
+</h1>
 <br>
-<h3 class="mx-auto flex gap-x-4 max-w-6xl items-center rounded-xl bg-pink-400 text-white p-6 shadow-lg outline outline-black/5 dark:bg-gray-400 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10 dark:text-pink-400">Segun la enciclopedia el amor es:<br>
+<h2 class="mx-auto flex gap-x-4 max-w-6xl items-center rounded-xl bg-pink-600 text-white p-6 shadow-lg outline outline-black/5 dark:bg-gray-700 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">Segun la enciclopedia el amor es:<br>
  El vínculo de afecto que nace de la valoración del otro e inspira el deseo de su bien. Puede verse como un valor o como una propiedad de las relaciones humanas.
 <br>
 pero al final de cuentas cada persona le da su propio significado<br>
-</h3>
-<h3 class="text-white">Porfavor ingresa tu inicial y el de tu persona especial <br> o sus nombres </h3>
-<input type="text" class="bg-stone-50 text-rose-400 border rounded-lg text-center" [(ngModel)]='newinicial1' [disabled]="cargando()"  placeholder="tu inicial">&nbsp;
-<input type="text" class="bg-stone-50 text-rose-400 border rounded-lg text-center" [(ngModel)]='newinicial2' [disabled]="cargando()" placeholder="su inicial">
+</h2>
+<h2 class="text-white">Porfavor ingresa tu inicial y el de tu persona especial <br> o sus nombres </h2>
+<input type="text" class="bg-stone-50 text-stone-900 border rounded-lg text-center" [(ngModel)]='newinicial1' [disabled]="cargando()"  placeholder="tu inicial">&nbsp;
+<input type="text" class="bg-stone-50 text-stone-900 border rounded-lg text-center" [(ngModel)]='newinicial2' [disabled]="cargando()" placeholder="su inicial">
 <br><BR>
-<button (click)="juntainiciales();" class="bg-red-500 hover:bg-pink-400 hover:text-red-500 border rounded-lg text-stone-50">PRESIONAME PARA UNIRLOS</button>
+<button (click)="juntainiciales();" class="bg-red-700 hover:bg-red-800 border rounded-lg text-white">PRESIONAME PARA UNIRLOS</button>
 <BR>
 <div class="flex items-center justify-center py-8">    
     <div class="bg-rose-300 border rounded-lg w-sm h-full items-center dark:bg-rose-900 text-violet-500">
@@ -31,9 +31,9 @@ pero al final de cuentas cada persona le da su propio significado<br>
 <!-- -->
 <div *ngIf="!cargando() && inicial().length > 0"><!--si no cargando y porcentajeentero no es cero aparece-->
     <div *ngFor="let it of inicial()">
-    <H1 >{{it.inicial1}} + {{it.inicial2}}</H1><!--para que es el span?-->
-    <h2>{{porcentajeEntero()}}%</h2>
-    <h2>{{respuesta()}}</h2>
+    <h3>{{it.inicial1}} + {{it.inicial2}}</h3>
+    <h4>{{porcentajeEntero()}}%</h4>
+    <h4>{{respuesta()}}</h4>
     <!--<div *ngFor="let item of inicial()">
     <H1><span>{{item.inicial1}}+{{item.inicial2}}</span></H1>
     <h2>{{porcentajeEntero}}%</h2>-->
@@ -43,16 +43,16 @@ pero al final de cuentas cada persona le da su propio significado<br>
 </div>
 
 <br>
-<h4 class="text-white">lo mas bonito de la vida:</h4><h4 id="amor">
-    <div class="bg-purple-100 text-pink-400">{{amor()}}</div></h4>
+<h3 class="text-white">lo mas bonito de la vida:</h3>
+<div id="amor" class="bg-purple-100 text-stone-900">{{amor()}}</div>
 <br>
 <button class="bg-violet-100 mg-5 px-2 hover:bg-cyan-200 text-stone-950" (click)="nosotros()">presioname</button>&nbsp;
 <button class="bg-purple-200 mg-5 px-2 hover:bg-cyan-200 text-stone-950" (click)="tuyyo()">reiniciar</button>
-<h4 class="text-white">tu sabes que yo soy:  <br>
-    {{amore()}}</h4> 
+<h3 class="text-white">tu sabes que yo soy:  <br>
+    {{amore()}}</h3> 
 </div>
 <div class="text-center  text-amber-200">
-<h4>Antes de continuar porfavor selecciona la cancion que quieras de fondo</h4>
+<h2>Antes de continuar porfavor selecciona la cancion que quieras de fondo</h2>
     <h3>ahora escuchando:&nbsp;{{cambiocancion()}}</h3>
     <div class="flex justify-center mt-4 ">
     <ng-container *ngIf="cancion() as currentSong"><!--if condicion cierta o falsa, mientras cancion valida se reproduce audio-->
@@ -64,17 +64,17 @@ pero al final de cuentas cada persona le da su propio significado<br>
     </ng-container>
     </div>
     <h3>Presiona la cancion de tu agrado para reproducir</h3>
-    <button (click)="cancion1()" class="bg-red-950 hover:bg-red-200 active:bg-red-200">Lo que siento de Cuco</button>
+    <button (click)="cancion1()" class="bg-red-900 text-white hover:bg-red-800 active:bg-red-900">Lo que siento de Cuco</button>
     &nbsp;
-    <button (click)="cancion2()" class="bg-red-950 hover:bg-red-200 active:bg-red-200">Only de LeeHi</button>
+    <button (click)="cancion2()" class="bg-red-900 text-white hover:bg-red-800 active:bg-red-900">Only de LeeHi</button>
     &nbsp;
-    <button (click)="cancion3()" class="bg-red-950 hover:bg-red-200 active:bg-red-200">her de JVKE</button>
+    <button (click)="cancion3()" class="bg-red-900 text-white hover:bg-red-800 active:bg-red-900">her de JVKE</button>
     &nbsp;
-    <button (click)="cancion4()" class="bg-red-950 hover:bg-red-200 active:bg-red-200">I Hear a Symphony de Cody Fry</button>
+    <button (click)="cancion4()" class="bg-red-900 text-white hover:bg-red-800 active:bg-red-900">I Hear a Symphony de Cody Fry</button>
 </div>
 <hr>
-<h5>si puedes ver esto funciono mi repositorio</h5>
-<h5 class="hover:bg-red-500 text-white">si pudiste ver esto, recuerda vivir con amor</h5>
+<p>si puedes ver esto funciono mi repositorio</p>
+<p class="hover:bg-red-500 text-white">si pudiste ver esto, recuerda vivir con amor</p>
 </div>
 <p class="prueba">Hola</p>
 </div>

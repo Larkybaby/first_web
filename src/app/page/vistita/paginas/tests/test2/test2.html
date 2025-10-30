@@ -3,7 +3,7 @@
 <div *ngIf="!terminamos() && indice() == 0">
     <h2>Bienvenido al test de cual es tu lenguaje de amor</h2>
     <div class="flex justify-center items-center">
-        <img
+        <img loading="lazy" decoding="async" fetchpriority="low"
         class="w-50 h-50"
         [src]="imagen()"
         >
@@ -44,7 +44,7 @@ class="border rounded-lg bg-lime-500 w-16 h-16 m-1"
 <h1>tu resultado es:<br>
 </h1>
 <h1>{{lenguajedelamor()}}</h1>
-<div class="flex justify-center">    <img
+<div class="flex justify-center">    <img loading="lazy" decoding="async" fetchpriority="low"
 class=" items-center border rounded-lg"
 [src]="imagen()">
 </div>
